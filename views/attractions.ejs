@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las Vegas | My List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="../public/css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/fa339ab44f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <%- include('partials/header') %>
+  <section id="main">
+    <section id="attractionsForUser" class="myList">
+      
+      <h1>My List:</h1><!--will change based on which tab the user is on-->
+      <nav>
+        <ul class='btnNav'>
+          <li class='btn' id='myListBtn'><button>My List</button></li>
+          <li class='btn' id='gamblingBtn'><button>Gambling</button></li>
+          <li class='btn' id='entertainBtn'><button>Entertainment</button></li>
+          <li class='btn' id='familyBtn'><button>Family Friendly</button></li>
+          <li class='btn' id='diningBtn'><button>Food & Drink</button></li>
+        </ul>
+      </nav>
+      <!--custom user list -->
+      <ul class="customL list">
+      <% attractions.forEach( el => { %>
+        <% if ( el.userId == user._id ) { %>
+        <li class='user card attractionItem' data-id='<%=el._id%>' user-id='<%=el.userId%>'>
+          <span class='<%= el.completed === true ? 'completed' : 'not'%>'>
+            <%= el.attraction %>
+          </span>
+          <span class='del'><i class="fa-solid fa-trash-can fa-xs"></i></span>
+        </li>
+        <% } %>
+      <% }) %>    
+      </ul>
+
+      <!--gambling list-->
+      <ul class='gamblingL list'>
+      <% attractions.forEach( el => { %>
+        <% if ( el.type == 'Gambling' ) { %>
+        <li class='card gamblingC' data-id='<%=el._id%>'>
+          <span class='<%= el.completed === true ? 'completed' : 'not'%>'>
+            <%= el.name %>
+          </span>
+        </li>
+        <% } %>
+      <% }) %>    
+      </ul>
+
+      <!--entertainment list-->
+      <ul class='entertainL list'>
+      <% attractions.forEach( el => { %>
+        <% if ( el.type == 'Entertainment' ) { %>
+        <li class='card entertainC' data-id='<%=el._id%>'>
+          <span class='<%= el.completed === true ? 'completed' : 'not'%>'>
+            <%= el.name %>
+          </span>
+        </li>
+        <% } %>
+      <% }) %>    
+      </ul>
+
+      <!--Food & Drinks list-->
+      <ul class='diningL list'>
+      <% attractions.forEach( el => { %>
+        <% if ( el.type == 'Food & Drinks' ) { %>
+        <li class='card diningC' data-id='<%=el._id%>'>
+          <span class='<%= el.completed === true ? 'completed' : 'not'%>'>
+            <%= el.name %>
+          </span>
+        </li>
+        <% } %>
+      <% }) %>    
+      </ul>
+
+      <!--Family-Friendly list-->
+      <ul class='familyL list'>
+      <% attractions.forEach( el => { %>
+        <% if ( el.type == 'Family-Friendly' ) { %>
+        <li class='card familyC' data-id='<%=el._id%>'>
+          <span class='<%= el.completed === true ? 'completed' : 'not'%>'>
+            <%= el.name %>
+          </span>
+        </li>
+        <% } %>
+      <% }) %>    
+      </ul>
+
+      <!--Freebies list not found in database :(
+      <ul class='familyL'>
+      <% attractions.forEach( el => { %>
+        <% if ( el.type == 'Family-Friendly' ) { %>
+        <li class='card entertainC' data-id='<%=el._id%>'>
+          <span class='<%= el.completed === true ? 'completed' : 'not'%>'>
+            <%= el.name %>
+          </span>
+        </li>
+        <% } %>
+      <% }) %>    
+      </ul>
+        -->
+        
+      <section class="interact">
+        <p>Add an attraction by entering it below:</p>
+        <form action="/attractions/createAttraction" method='POST'>
+          <input type="text" placeholder="Location name" name='attractionItem'>
+            <input type="submit" class="submitBtn">
+        </form>
+        <a id="logout" href="/"><button class="submitBtn">Logout</button></a>
+      </section>
+    </section>
+  </section>
+  <%- include('partials/footer') %>
+  <script src="../public/js/main.js"></script>
+</body>
+</html>

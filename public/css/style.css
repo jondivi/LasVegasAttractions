@@ -1,0 +1,399 @@
+/* CSS RESET
+    http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CSS Layout is structured like the pages
+body (100vh)
+  header (12vh)
+  section id: main (78vh)
+    section class: index, signup, login, myList (according to page)
+      section class: interact
+        BUTTONS such as <a><button></a>, input type='submit'
+  footer (10vh)
+*/
+
+html{
+  background-color: rgb(33,19, 101);
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background: rgb(33,19,101);
+    background: linear-gradient(159deg, rgb(33,19,101) 17%, rgba(253,29,29,1) 70%, rgba(252,176,69,1) 91%);
+    text-align: center;
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+header{
+    height: 14vh;
+    font-size: 1.8rem;
+    font-family: 'Shrikhand', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+  header a{
+    color: white;
+    filter: drop-shadow(9px 4px 0 rgba(0, 0, 100, .5));
+  }
+  header a:hover{
+    color: gold;
+  }
+  header span{
+    margin-top: .2em;
+    font-size: .9rem;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+  }
+section#main{
+    height: 76vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+  /* INDEX STYLING */
+  .index, .signup, .login, .myList{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(0,0,0,0);
+    color: white;
+  }
+    h1{
+        
+        padding: 0 1em;
+        font-family: 'Shrikhand', cursive;
+        font-size: 1.5rem;
+        letter-spacing: .05rem;
+        filter: drop-shadow(4px 5px 0 rgba(0, 0, 100, .35));
+    }
+    h2{
+        width: 80%;
+        padding: 0 1.5em;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.2rem;
+    }
+    section#main .interact{
+        width: 18em;
+        height: 3.5em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+  /* SIGNUP STYLING */
+  section#main .signup{
+    justify-content: space-evenly;
+    height: 80%;
+  }
+/*     section#main .signup h1{
+      margin-top: 1em;
+    } */
+    section#main div.errorMsg{
+      width: 82%;
+      background-color: rgba(255,255,255,.7);
+      color: #bd0000;
+      font-size: 1rem;
+      font-weight: 700;
+      text-align: center;
+      border-radius: 2em;
+    }
+    section#main div.errorMsg span{
+      padding: .5em 0;
+      display: block;
+    }
+    section#main div.errorMsg span + span{
+      margin-top: -1em;
+    }
+    section#main .signup .interact, section#main .login .interact, section#main .myList .interact{
+      height: 32em;
+      width: 100%;
+      display:flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+      form{
+        height: 18em;
+        width: 16em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+        font-size: 1rem;
+      }
+        label{
+          margin-bottom: .15em;
+          padding-left: 1em;
+          font-weight: 500;
+        }
+        input{
+          height: 2em;
+          margin-bottom: .5em;
+          border-radius: .9em;
+          border: 1px solid rgb(33, 19, 101);
+          white-space: pre;
+          text-indent: 1em;
+        }    
+  /* LOGIN - STYLING */
+  section#main .login{
+    height: 60%;
+  }
+    section#main .login .interact{
+      height: 20em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+    section#main .interact div.newUsers{
+      margin-top: 1.1em;
+    }
+        section#main .interact  p, section#main .interact .newUsers a{
+          font-size: .9rem;
+          display: inline;
+        }
+        section#main .interact .newUsers a{
+          margin-left: .2em;
+          font-size: 1rem;
+          font-weight: 600;
+        }
+        section#main .interact .newUsers a:hover{
+          font-style: italic;
+          text-transform: uppercase;
+          letter-spacing: .2rem;
+          color: gold;
+        }
+  /* MYLIST - STYLING */
+  section#main .myList{
+    height: 90%;
+    justify-content: space-between;
+  }
+    .myList ul{
+      height: 28em;
+      width: 30em;
+      margin-left: 1em;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow: scroll;
+    }
+    .myList nav{
+      width: 100%;
+      margin-top: -1em;
+      background-color: rgb(33, 19, 101);
+/*       border-radius: 2em; */
+      font-size: .8rem;
+    }
+    .myList ul.btnNav{
+      height: 4em;
+      width:  100%;
+      margin: 0;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    .myList ul.btnNav li{
+      display: inline;
+      
+    }
+    .myList ul.btnNav li button{
+      height: 2.5em;
+      background-color: rgba(0,0,0,0);
+      color: white;
+      font-size: .8rem;
+    }
+    .myList ul.btnNav li button:hover{
+      padding: 0 .75em;
+      border-radius:  1.75em 1em;
+      background-color: gold;
+      color: rgb(33, 19, 101);
+      font-size: 1rem;
+      font-family: 'Shrikhand', cursive;
+      
+    }
+    #myListBtn{
+      display:none;
+    }
+/* 'myListBtn' 'gamblingBtn' 'entertainBtn' 'familyBtn' 'diningBtn'
+*/
+    .myList ul.customL{
+      display: flex;
+    }
+    .myList ul.gamblingL{
+      display:none;
+    }
+    .myList ul.entertainL{
+      display:none;
+    }
+    .myList ul.diningL{
+      display:none;
+    }
+    .myList ul.familyL{
+      display:none;
+    }
+  /* INDIVIDUAL ATTRACTION CARD */
+  section#main .myList li.card{
+    width: 18em;
+    margin-bottom: 1em;
+    padding: .25em 0;
+    background-color: rgba(255,255,255,.8);
+    color: rgb(33 19 101);
+    border-radius: 2em;
+    box-shadow: 9px 9px 2px 1px rgba(0, 0, 255, .2); 
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+    section#main .myList li span.not{
+      margin-left: .5em;
+    }
+    section#main .myList li span.del{
+      margin-right: .5em;
+      float: right;
+    }
+    /* COMPLETED ITEM STYLING */
+    .completed{
+        text-decoration: line-through;
+        color: gray;
+    }
+    /* .not{
+        text-decoration: underline;
+    }  */
+  section#main section.myList section.interact{
+    height: 11em;
+    display: block;
+  }
+    section#main section.myList section.interact p{
+      margin-bottom: .5em;
+      display: block;
+    }
+    section#main section.myList form{
+      height: 4.7em;
+      display: inline;
+    }
+      section#main section.myList form input{
+        width: 20em;
+        margin: 0 auto .5em auto;
+        display: block;
+      }
+    /* MAIN - ALL BUTTONS */
+    section#main .index .interact a,.submitBtn, section#footer a{
+        color: white;
+        text-decoration: none;
+    }
+    section#main .index .interact a,.submitBtn{
+        padding: .8em 1.1em;
+        border-radius: 1.1em;
+        background-color: rgba(33, 19, 101,1) ;
+        font-size: .8rem;
+        font-weight: 600;
+        box-shadow: 5px 5px 2px 1px rgba(0, 0, 255, .2); 
+    }
+    section#main .index .interact  a:hover,.submitBtn:hover{
+        width: auto;
+        background-color: gold;
+        color: rgb(33 19 101);
+        font-family: 'Shrikhand', cursive;
+        font-size: .8rem;
+        letter-spacing: .2rem;
+        white-space: nowrap;
+        border: 3px solid rgb(33 19 101);
+        border-radius:  1.75em 1em;
+    }
+    .submitBtn{
+      padding: 0 1em;
+      height: 3em;
+      margin: 0 auto;
+      text-indent: 0;
+      border-radius: 1.4em;
+    }
+    button{
+      border: none;
+    }
+    section#main section.myList form input + input{
+        width: 6em;
+        margin-right: 1em;
+        display: inline;
+      }
+    section#main section.myList form input + input:hover{
+      width: 8em;
+    }
+    section#main section.myList .interact a{
+      display: float;  
+    }
+
+section#footer{
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: .8rem;
+    font-weight: 500;
+}
+    section#footer ul{
+        list-style: none;
+        margin-top: 1em;
+    }
+    section#footer li{
+        display: inline;
+        padding: 0 2%;
+    }
+    section#footer a:hover{
+        padding: .8em 1.1em;
+        border-radius: 1.2em;        
+        color: white;
+        text-decoration:underline;
+        background-color: rgb(33 19 101);
+    }

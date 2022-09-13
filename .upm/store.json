@@ -1,0 +1,1 @@
+{"version":2,"languages":{"nodejs-npm":{"specfileHash":"8e4fa53d91d5e06ebd7de25a7d32a2a2","lockfileHash":"78df42f7b0d4adba6ed30427328e345c","guessedImports":["mongoose","passport","express-session","connect-mongo","morgan","validator","passport-local","express","bcrypt","express-flash","dotenv"],"guessedImportsHash":"5c6e468995ac86bd81539ec0952ba35b"}}}
