@@ -40,3 +40,8 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 - Let users bookmark things for easy reach in a 'saved' tab
 - Map
 - Link to Yelp/Google Reviews
+
+# Individual responsiblities
+
+- This was a team project so many hands were involved in bringing it to life. For my part, I was involved in updating the logout button, fixing the link between the main JS, and a few other minor pieces.
+- The other members of my team were instrumental in adding in the new tab functionality and massaging the CSS.
